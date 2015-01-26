@@ -16,7 +16,7 @@
   {
     .b-header__container
     {
-      height: 50px;
+      height: 80px;
     }
     .b-header__logo
     {
@@ -25,6 +25,10 @@
     .b-header__logo-scroll
     {
       .opacity(1);
+    }
+
+    .b-language.active:after {
+      top: -22px;
     }
   }
 
@@ -163,6 +167,19 @@
     background-repeat: none;
   }
 
+  &.active {
+    &:after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: -30px;
+      display: block;
+      width: 2px;
+      height: 20px;
+      background: #4f759c;
+    }
+  }
+
   &_english {
     &:before {
       .sprite(@icon-flag-gb);
@@ -263,8 +280,7 @@
 
     &--state-scroll
     {
-      background: #0f396b;
-      background: rgba(15,57,107, 0.8);
+      background: #033a7f;
     }
   }
 }

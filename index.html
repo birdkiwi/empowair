@@ -24,7 +24,7 @@
         <div class="b-header__container">
 
             <a href="index.html" class="b-header__logo"></a>
-            <a href="#start" class="b-header__logo-scroll"></a>
+            <a href="#start" data-scroll-to="#start" class="b-header__logo-scroll"></a>
 
             <a class="b-header__menu" data-b-menu-button></a>
 
@@ -32,10 +32,10 @@
                 <li class="b-user-panel__item b-languages">
                     <a class="b-language b-language_russian" href="#"></a>
                     <a class="b-language b-language_french" href="#"></a>
-                    <a class="b-language b-language_english" href="#"></a>
+                    <a class="b-language b-language_english active" href="#"></a>
                 </li>
                 <li class="b-user-panel__item">
-                    <a class="b-user-panel__reg" href="#questions" data-scroll-to="true">Get in touch</a>
+                    <a class="b-user-panel__reg" href="#contactus" data-scroll-to="#contactus">Get in touch</a>
                 </li>
             </ul>
 
@@ -55,11 +55,11 @@
                 <ul class="b-slider__nav wow fadeInDown" data-nav></ul>
             </div>
 
-            <div class="b-slider__container wow fadeIn" data-holder>
+            <div class="b-slider__container wow fadeInDown" data-holder>
 
                 <div class="b-slider__item" data-item>
-                    <h2 class="wow fadeInDown">Travel consulting</h2>
-                    <p class="wow fadeInDown">
+                    <h2>Travel consulting</h2>
+                    <p>
                         We partner with you around your business challenges by providing results-oriented, business-focused consulting across the entire continuum of your airline enterprise: business and IT transformation, revenue accounting, pricing and revenue management and sales and distribution.
                     </p>
                 </div><!-- /.b-slider__item -->
@@ -120,7 +120,7 @@
         </div>
     </div>
 
-    <div class="b-services group" id="services">
+    <div class="b-services group" data-block id="services">
         <div class="b-services__container">
             <h2>Services</h2>
 
@@ -182,59 +182,6 @@
                             <li>Booking engines optimization</li>
                             <li>Inspirational flight Search</li>
                             <li>Sales Assessment And Performance Improvement</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="b-map" id="contactus">
-        <div class="b-map__mapcontainer" id="b-map"></div>
-        <div class="b-map__container">
-            <div class="b-map__column">
-                <h2>Contact us</h2>
-
-                <div class="b-map__column_item" data-accordeon-group="contact-us">
-                    <a href="#" class="b-map__column_item_title active" data-accordeon-toggle data-maps-panto="25.0847366, 55.1453589">Dubai office</a>
-                    <div class="b-map__column_item_content active" data-accordeon-content>
-                        <ul>
-                            <li><i class="icon-geo"></i> Somename st. 245</li>
-                            <li><i class="icon-phone"></i> +3 (456) 556-56-36</li>
-                            <li><i class="icon-email"></i> <a href="#">dubai@empowair.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="b-map__column_item" data-accordeon-group="contact-us">
-                    <a href="#" class="b-map__column_item_title" data-accordeon-toggle data-maps-panto="48.849532,2.3447221">French office</a>
-                    <div class="b-map__column_item_content" data-accordeon-content>
-                        <ul>
-                            <li><i class="icon-geo"></i> Somename st. 245</li>
-                            <li><i class="icon-phone"></i> +3 (456) 556-56-36</li>
-                            <li><i class="icon-email"></i> <a href="#">dubai@empowair.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="b-map__column_item" data-accordeon-group="contact-us">
-                    <a href="#" class="b-map__column_item_title" data-accordeon-toggle data-maps-panto="34.7349806,10.7567378">Tunisian office</a>
-                    <div class="b-map__column_item_content" data-accordeon-content>
-                        <ul>
-                            <li><i class="icon-geo"></i> Somename st. 245</li>
-                            <li><i class="icon-phone"></i> +3 (456) 556-56-36</li>
-                            <li><i class="icon-email"></i> <a href="#">dubai@empowair.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="b-map__column_item" data-accordeon-group="contact-us">
-                    <a href="#" class="b-map__column_item_title" data-accordeon-toggle data-maps-panto="55.030823,82.9203633">Russian office</a>
-                    <div class="b-map__column_item_content" data-accordeon-content>
-                        <ul>
-                            <li><i class="icon-geo"></i> Somename st. 245</li>
-                            <li><i class="icon-phone"></i> +3 (456) 556-56-36</li>
-                            <li><i class="icon-email"></i> <a href="#">dubai@empowair.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -392,6 +339,59 @@
         </div><!-- /.b-partners__container -->
     </div><!-- /.b-partners -->
 
+    <div class="b-map" data-block id="contactus">
+        <div class="b-map__mapcontainer" id="b-map"></div>
+        <div class="b-map__container">
+            <div class="b-map__column">
+                <h2>Contact us</h2>
+
+                <div class="b-map__column_item" data-accordeon-group="contact-us">
+                    <a href="#" class="b-map__column_item_title active" data-accordeon-toggle data-maps-panto="25.0847366, 55.1453589">Dubai office</a>
+                    <div class="b-map__column_item_content active" data-accordeon-content>
+                        <ul>
+                            <li><i class="icon-geo"></i> Somename st. 245</li>
+                            <li><i class="icon-phone"></i> +3 (456) 556-56-36</li>
+                            <li><i class="icon-email"></i> <a href="#">dubai@empowair.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="b-map__column_item" data-accordeon-group="contact-us">
+                    <a href="#" class="b-map__column_item_title" data-accordeon-toggle data-maps-panto="48.849532,2.3447221">French office</a>
+                    <div class="b-map__column_item_content" data-accordeon-content>
+                        <ul>
+                            <li><i class="icon-geo"></i> Somename st. 245</li>
+                            <li><i class="icon-phone"></i> +3 (456) 556-56-36</li>
+                            <li><i class="icon-email"></i> <a href="#">dubai@empowair.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="b-map__column_item" data-accordeon-group="contact-us">
+                    <a href="#" class="b-map__column_item_title" data-accordeon-toggle data-maps-panto="34.7349806,10.7567378">Tunisian office</a>
+                    <div class="b-map__column_item_content" data-accordeon-content>
+                        <ul>
+                            <li><i class="icon-geo"></i> Somename st. 245</li>
+                            <li><i class="icon-phone"></i> +3 (456) 556-56-36</li>
+                            <li><i class="icon-email"></i> <a href="#">dubai@empowair.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="b-map__column_item" data-accordeon-group="contact-us">
+                    <a href="#" class="b-map__column_item_title" data-accordeon-toggle data-maps-panto="55.030823,82.9203633">Russian office</a>
+                    <div class="b-map__column_item_content" data-accordeon-content>
+                        <ul>
+                            <li><i class="icon-geo"></i> Somename st. 245</li>
+                            <li><i class="icon-phone"></i> +3 (456) 556-56-36</li>
+                            <li><i class="icon-email"></i> <a href="#">dubai@empowair.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="b-feedback" data-block id="questions">
         <div class="b-feedback__container">
 
@@ -445,8 +445,8 @@
                         <li class="b-list-inner__item"><a class="b-list-inner__link" href="#start">1. Start</a></li>
                         <li class="b-list-inner__item"><a class="b-list-inner__link" href="#about">2. About us</a></li>
                         <li class="b-list-inner__item"><a class="b-list-inner__link" href="#services">3. Services</a></li>
-                        <li class="b-list-inner__item"><a class="b-list-inner__link" href="#contactus">4. Contact us</a></li>
-                        <li class="b-list-inner__item"><a class="b-list-inner__link" href="#partners">5. Our clients</a></li>
+                        <li class="b-list-inner__item"><a class="b-list-inner__link" href="#partners">4. Our clients</a></li>
+                        <li class="b-list-inner__item"><a class="b-list-inner__link" href="#contactus">5. Contact us</a></li>
                         <li class="b-list-inner__item"><a class="b-list-inner__link" href="#questions">6. Ask a question</a></li>
                     </ul>
                 </li>

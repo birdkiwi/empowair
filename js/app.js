@@ -642,7 +642,7 @@ $(document).ready(function(){
     });
 
     $('[data-scroll-to]').click(function() {
-        var target = $(this).attr('href');
+        var target = $(this).data('scroll-to');
         $('html,body').animate({
             scrollTop: $(target).offset().top - 50
         }, 1000);
