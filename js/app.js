@@ -623,9 +623,9 @@ $(document).ready(function(){
         toggler.click(function(){
             if(!$(this).hasClass('active')) {
                 groupTogglers.removeClass('active');
-                groupContents.removeClass('active');
+                groupContents.slideUp('fast');
                 toggler.addClass('active');
-                content.addClass('active');
+                content.slideDown('fast');
             }
 
             return false;
