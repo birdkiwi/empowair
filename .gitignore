@@ -1,6 +1,2 @@
 .idea
 node_modules
-js/build
-img/sprites/spritesheet.png
-css/master.min.css
-css/style.css

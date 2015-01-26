@@ -541,6 +541,47 @@ var mapOptions = {
 
 var map = new google.maps.Map(document.getElementById("b-map"), mapOptions);
 
+$(document).on('submit', '[data-ajax-form]', function(){
+    var form = $(this);
+    var formContainer = form.parent();
+    var actionUrl = form.attr('action');
+    var errorMsg = form.data('ajax-form-error-msg');
+    var successBlock = form.data('ajax-form-success-block');
+
+    console.log(actionUrl);
+    console.log(errorMsg);
+    console.log(successBlock);
+
+    if ( form.valid() ) {
+        $.ajax({
+            type: "POST",
+            url: actionUrl,
+            data: form.find('select, textarea, input').serialize(),
+            success: function(data) {
+                if(data.error === false) {
+                    formContainer.animate({'opacity': 0}, 200, function(){
+                        form[0].reset();
+                    }).css('z-index', 0);
+                    $(successBlock).animate({'opacity': 1}, 200).css('z-index', 100);
+                } else {
+                    alert(errorMsg + " " + data.errorMessage);
+                }
+            }
+        });
+    }
+
+    return false;
+});
+
+$(document).on('click', '[data-ajax-form-success-block-ok]', function(){
+    var successBlock = $(this).closest('.b-feedback__container_success');
+    var formContainer = $(this).data('ajax-form-success-block-ok');
+    $(successBlock).animate({'opacity': 0}, 200).css('z-index', 0);
+    $(formContainer).animate({'opacity': 1}, 200).css('z-index', 100);
+
+    return false;
+});
+
 $(document).ready(function(){
 
     $('[data-p-index]').pIndex();
@@ -647,6 +688,12 @@ $(document).ready(function(){
             scrollTop: $(target).offset().top - 50
         }, 1000);
         return false;
+    });
+
+    $('[data-form-validate]').each(function(){
+        $(this).validate({
+            errorPlacement: function(error, element) {}
+        });
     });
 });
 
