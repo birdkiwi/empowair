@@ -11014,16 +11014,43 @@ new WOW().init();
     };
 })(jQuery);
 
-var mapOptions = {
-    center: new google.maps.LatLng(25.0847366, 55.1453589),
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    panControl: false,
-    streetViewControl: false,
-    scrollwheel: false
-};
+var map;
 
-var map = new google.maps.Map(document.getElementById("b-map"), mapOptions);
+function mapInit() {
+    var mapOptions = {
+        // Центр карты при загрузке
+        center: new google.maps.LatLng(25.0847366, 55.1453589),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        panControl: false,
+        streetViewControl: false,
+        scrollwheel: false
+    };
+    map = new google.maps.Map(document.getElementById('b-map'),
+        mapOptions);
+
+    // Маркеры на карте
+    var markers = [
+        [25.0847366, 55.1453589],
+        [48.849532, 2.3447221],
+        [34.7349806, 10.7567378],
+        [55.030823, 82.9203633]
+    ];
+
+    for (var i = 0; i < markers.length; i++) {
+        var markerPosition = markers[i];
+        console.log(markerPosition);
+        console.log(markerPosition[0]);
+        console.log(markerPosition[1]);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(markerPosition[0], markerPosition[1]),
+            map: map,
+            icon: 'img/single/pin.png'
+        });
+    }
+}
+
+google.maps.event.addDomListener(window, 'load', mapInit);
 
 $(document).on('submit', '[data-ajax-form]', function(){
     var form = $(this);
@@ -11031,10 +11058,6 @@ $(document).on('submit', '[data-ajax-form]', function(){
     var actionUrl = form.attr('action');
     var errorMsg = form.data('ajax-form-error-msg');
     var successBlock = form.data('ajax-form-success-block');
-
-    console.log(actionUrl);
-    console.log(errorMsg);
-    console.log(successBlock);
 
     if ( form.valid() ) {
         $.ajax({
